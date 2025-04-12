@@ -1,0 +1,52 @@
+---
+title: "Learning nonadjacent<br/>dependencies in phonology"
+subtitle: "Transparent vowels in vowel harmony"
+author: "Merlin Balihaxi <br/>⚔ with xaringan"
+institute: "Data Science for Linguists, Rutgers University"
+date: "2025/04/11 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+#1. Introduction
+---
+#2. Research Questions
+---
+#3. Methods
+##3.1 a
+##3.2 b
+---
+#4. Results
+##4.1 a
+##4.2 b
+---
+#5. Conclusion
+---
+#6. Evaluations
+##6.1 Explanation of analysis
+### What did they do?
+### How did they do?
+### Why did they do?
+---
+#6. Evaluations
+##6.2 Appropriateness/novelty of analysis
+---
+#6. Evaluations
+##6.3 Presentation of results
+---
+#6. Evaluations
+##6.4 Overall evalutations
+---
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+Please find the paper [here](https://muse.jhu.edu/pub/24/article/576994/pdf)
+
+Finley, S. (2015). Learning nonadjacent dependencies in phonology: Transparent vowels in vowel harmony. *Language*, 91(1), 48-72.
