@@ -5,15 +5,15 @@
     <meta charset="utf-8" />
     <meta name="author" content="Merlin Balihaxi  ⚔ with xaringan" />
     <script src="libs/header-attrs-2.29/header-attrs.js"></script>
-    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/rutgers-fonts.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 .title[
-# Learning nonadjacent<br/>dependencies in phonology
+# Learning nonadjacent dependencies in phonology
 ]
 .subtitle[
 ## Transparent vowels in vowel harmony
@@ -25,18 +25,365 @@ class: center, middle, inverse, title-slide
 ### Data Science for Linguists, Rutgers University
 ]
 .date[
-### 2025/04/11 (updated: 2025-04-12)
+### 2025/04/11 (updated: 2025-04-13)
 ]
 
 ---
 
+#⚔
+#Assignment Instructions
+###(Click [Here](https://github.com/ds4ling/online_presentation))
+
+--
+
+## a small preface
+Since the focus of the assignment is put more on evaluating the statistical analysis part, it is not really necessary (for the audience) to know what each group in a specific experiment stands for. We need to care only about that certain groups (tags) are under **COMPARISON**.
+
+###Hence, if you happen to open my presentation to finish your commenting assignment, **RUN!** They have too many details!
+---
 #1. Introduction
+so the basic idea of this paper is to test the long-distance phenomena via experiments.
+
+---
+#1. Introduction
+## Crucial Term Definitions
+###1. **First-Order NonAdjacent Dependency**
+only consonants are skipped
+###2. **Second-Order NonAdjacent Dependency**
+some vowels are also skipped based on the first one
+---
+#1. Introduction
+## Crucial Term Definitions
+###3. neutral vowel
+a vowel that does not undergo vowel harmony
+###4. transparent neutral vowel (denoted as `\(V^T\)`) 
+a **neutral vowel** that allows the feature-agreement process to 'skip' itself.
+[$V_{+}$$V_{-}^{T}$$V_{+}$] [second-order]
+
+Ambiguity created by second-order leads to chanllenges for a learner [$V_{-}$$V_{-}^{T}$$V_{-}$] [second-order]
+###5. opaque neutral vowel (denoted as `\(V^O\)`)
+a **neutral vowel** that does not allow the feature-agreement process to 'skip' itself.
+[$V_{+}$$V_{-}^{O}$$V_{-}$] [first-order]
+---
+#1. Introduction
+## distal constratint &lt;span style="font-variant: small-caps;"&gt;Distal*&lt;/span&gt;
+violated by [+back]X[-back] or [-back]X[+back]
+
+the number of segments between two backs matter, 
+
+---
+#1. Introduction
+## Hungarian
+Hungarian provides a classic example of transparent vowels in vowel harmony.
+
+the first vowel of the word determines the back feature of all following vowels, including the vowel features of suffixes that attach to the stem. (Finley 2015:49)
+
+The front vowels [i] and [e] are transparent
+[$pɔ_{+}lle:_{-}^{T}r-nɔ_{+}k$] ‘foreman-dat’
+
+---
+#1. Introduction
+adults exposed to vowel harmony for the first time, should start with no harmony constraints
+initial state , harmonic 50%, disharmonic 50%
+
+harmonic percentage will go up after gradual learning.
+
+between transparent and opaque, opaque 50%, transparent 25%? this is not right
+
+in sum, they think opaque case is easier to learn, should require less traning to acquire
+---
+#1. Introduction
+previous studies have shown that adult learners are adept at acquiring the first-order nonadjacent dependencies in vowel harmony (Finley &amp; Badecker 2007, 2009, 2012, Moreton 2008, Pycha et al 2003)
 ---
 #2. Research Questions
+##??
+
+### related hypotheses
+`\(H_0\)`: There is **no difference** between learnings of opaque neutral vowels (first-order nonadjacency) and transparent neutral vowels (second-order nonadjacency).
+
+`\(H_1\)`: opaque neutral vowels (first-order nonadjacency) is **easier** to learn **than** transparent neutral vowels (second-order nonadjacency).
 ---
 #3. Methods
+aritificial grammar learning paradigm to test hypothesis [more like a simplified language model, cuz in real language you need to care about too many factors]
+
+two-alternative forced-choice: basically, after training, there are two choices (the right one and the wrong one), you have to pick one. If. you picked the right one, that means you have learnt the pattern.
+
+h1: opaque neutral vowels (first-order nonadjacency) should be easier to learn than transparent neutral vowels (second-order nonadjacency)
+
+5 experiments
 ##3.1 a
 ##3.2 b
+---
+#3. Methods Summary
+## Experiments Summary
+###1. learning the behaviour of neutral vowels with a first-order nonadjacent pattern is compared to learning a second-order nonadjacent pattern p53
+###2. they are trained first, and then tested, if there is no statistical difference, then we say they learnt, if there is statistical difference, (the test group scores less), then we say they have not learnt.
+###3.
+###4a
+###4b
+###4c
+###5
+
+---
+#3. Methods Summary
+### tags for slides purpose (training)
+#### **HSH** - harmonic **stem** (harmonising vowel: i, e, o, u)
+#### **HSN** - harmonic **stem** (neutral vowel: i, e, ɛ)
+#### **DSN** - disharmonic **stem** (neutral vowel: o, u, ɛ)
+#### **TS** - transparent **suffix**
+#### **OS** - opaque **suffix**
+
+
+### combination: stem + suffix
+
+---
+#3. Methods Summary
+### tags for slides purpose (testing)
+#### **OLD** - all combination in training
+#### **newHS** - combination of new HS (new HSH/HSN) and TS/OS
+#### **newDS** - combination of new DSN and TS/OS
+
+mainly the idea is that the participant trained on combination in training comibination above and they were tested on learnt/unlearnt patterns and got a score. The test is to pick the 'right' one in two choices.
+---
+#4. Experiment I
+##**Methods**
+| Group | training | testing |
+|-------|---------:|--------:|
+| **T**(ransparency) | HSH+TS, HSN+TS, DSN+TS| OLD, newHS, newDS |
+| **O**(pacity)    | HSH+OS, HSN+OS, DSN+OS  | OLD, newHS, newDS |
+| **C**(ontrol) | HSH, HSN, DSN | OLD, newHS, newDS |
+
+--
+**C** group is the baseline for **T** and **O**;
+
+**OLD** is the baseline for **newHS** and **newDS**
+
+---
+#4. Experiment I
+##**Results I**
+.pull-left[
+#### main effect of groups
+- O vs. C: sig. different on mean
+- T vs. C: sig. different on mean
+]
+
+.pull-right[
+&lt;img src="images/exp1.png" height="250px" style="border: 3px solid black; border-radius: 10px;"&gt;
+&lt;div style="
+  position: absolute;
+  top: 292px;
+  left: 483px;
+  width: 300px;
+  height: 30px;
+  border: 3px solid red;
+  background-color: transparent;
+"&gt;
+&lt;/div&gt;
+]
+--
+
+___
+**their description:** *a significant difference between both the Opaque and Control conditions (0.69 vs. 0.48, ß = 0.90, z = 2.70, p = 0.0070) and the Transparent and Control conditions (0.65 vs. 0.48, ß = 1.31, z = 3.80, p &lt; 0.001)*
+---
+#4. Experiment I
+##**Results II**
+.pull-left[
+#### interaction effect
+comparing group T and group C:
+-  the difference between **newDS** and **OLD**: sig. different between **T** and **C**
+]
+
+.pull-right[
+&lt;img src="images/exp1.png" height="250px" style="border: 3px solid black; border-radius: 10px;"&gt;
+  &lt;div style="
+    position: absolute;
+    top: 393px;
+    left: 483px;
+    width: 300px;
+    height: 30px;
+    border: 3px solid red;
+    background-color: transparent;"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+]
+
+--
+___
+
+**their description:** *a significant interaction between the Transparent and Control conditions for new disharmonic stem vs. old stem items (ß = -1.41, z = -2.48, p = 0.013)*
+
+---
+#4. Experiment I
+##**Results III**
+.pull-left[
+#### for **newDS**
+- The difference of learning of **newDS** is sig. between Group O and Group C
+- The difference of learning of **newDS** is *NOT* sig. between Group T and Group C
+]
+
+.pull-right[
+&lt;img src="images/exp1a.png" height="200px" style="border: 3px solid black; border-radius: 10px;"&gt;
+&lt;div style="
+  position: absolute;
+  top: 293px;
+  left: 483px;
+  width: 300px;
+  height: 65px;
+  border: 3px solid red;
+  background-color: transparent;
+"&gt;
+&lt;/div&gt;
+]
+--
+
+___
+**their description:** *a significant difference between Opaque and Control for new disharmonic stem items (0.71 vs. 0.51, ß = 1.01, z = 2.32, p = 0.020) -- no significant difference between Transparent and Control for new disharmonic stem items (0.49 vs. 0.51, ß = 0.10, z = 0.25, p = 0.80)*
+
+---
+#4. Experiment I
+##**Results IV**
+.pull-left[
+#### for **newDS**
+- The difference of learning of **newDS** is sig. between Group O and Group T
+]
+
+.pull-right[
+&lt;img src="images/exp1a.png" height="200px" style="border: 3px solid black; border-radius: 10px;"&gt;
+&lt;div style="
+  position: absolute;
+  top: 360px;
+  left: 483px;
+  width: 300px;
+  height: 30px;
+  border: 3px solid red;
+  background-color: transparent;
+"&gt;
+&lt;/div&gt;
+]
+--
+
+___
+**their description:** *a significant difference (0.71 vs. 0.49, ß = 1.15, z = 2.44, p = 0.014)*
+
+---
+#4. Experiment I
+## Interim Summary
+- people can learn **T**ransparency and **O**pacity in general
+
+
+- newDS is only learnt in group **O**, not in group **T**
+
+___
+*This difference between the Opaque and Transparent conditions may have increased the difficulty of learning the behavior of the transparent neutral vowel.*
+
+
+---
+#4. Experiment II
+I will skip explaining this experiment and you will know why.
+
+So the **second experiment** was established based on the first experiment. The researcher suspected that the significant difference tested in the **first experiment** was because **newDS** in group **T** has two possibilities, while in group **O** it has only one possibility.
+
+They want to eliminate that it is not because of the difference between those **TWO** possibilities in group **T** that causes the difference between group **T** and group **O**.
+
+*THEN WHY THE H**L DID YOU DESIGN THEM UNCONTROLLED IN THE FIRST PLACE!*
+
+The results shows that the difference between group **T** and group **O** is NOT due two those two possibilites.
+
+---
+#4. Experiment III
+##**Methods**
+Now that we know learning **T**ransparency (Group **T**) is possible comparing to the Group **C** in general.
+
+Yet, for **newDS** (a specific type in each group), there is no difference on 'score' if we compare group **T** and group **C**.
+
+Then how about we change the **stem** final [ɛ] to another transparent vowel [i]? (This is a change inside all possible stems both in training and testing.) More specifically, will a different vowel lead to different score for **newDS** in group **T** comparing to group **C**?
+
+| Group | training | testing |
+|-------|---------:|--------:|
+| **T**(ransparency) | HSH+TS, HSN+TS, DSN+TS| OLD, newHS, newDS |
+| **C**(ontrol) | HSH, HSN, DSN | OLD, newHS, newDS |
+
+remember here: there is a vowel change in all tags here. We might want to call for exmaple a newDS a new-newDS. Let's just do not do it...
+---
+#4. Experiment III
+##**Results**
+.pull-left[
+#### main effect of groups
+- T vs. C: sig. different on mean
+
+#### interaction effect
+comparing group T and group C:
+-  the difference between **newDS** and **OLD**: sig. different between **T** and **C**
+]
+
+.pull-right[
+&lt;img src="images/exp3.png" height="200px" style="border: 3px solid black; border-radius: 10px;"&gt;
+&lt;div style="
+  position: absolute;
+  top: 300px;
+  left: 498px;
+  width: 302px;
+  height: 25px;
+  border: 3px solid red;
+  background-color: transparent;
+"&gt;
+&lt;/div&gt;
+&lt;div style="
+  position: absolute;
+  top: 400px;
+  left: 498px;
+  width: 302px;
+  height: 45px;
+  border: 3px solid black;
+  background-color: transparent;
+"&gt;
+&lt;/div&gt;
+]
+--
+
+___
+**their description:** *a significant difference between the Transparent and Control conditions (ß = 0.81, z = 3.12, p = 0.018). - a significant interaction between the Transparent and Control conditions for new disharmonic stem vs. old stem items (ß= -0.62, z = -2.09, p = 0.037)*
+---
+#4. Experiment III
+##**Results**
+
+Changing the vowel inside the stem would not enhance the score (learning) of **T**ransparency.
+
+Now, it is time to suspect if this *being unable to learn **T**ransparency* is due to a lack of training and we have three experiments in experiment 4.
+---
+
+
+#4. Experiment IV
+##**Methods**
+We still have the same training and testing processes
+
+| Group | training | testing |
+|-------|---------:|--------:|
+| **T**(ransparency) | HSH+TS, HSN+TS, DSN+TS| OLD, newHS, newDS |
+| **C**(ontrol) | HSH, HSN, DSN | OLD, newHS, newDS |
+
+--
+___
+Yet, we have different amount of training (exposure).
+
+**experiment 4a:** amount of exposure doubled
+
+**experiment 4b:** amount of exposure doubled + porportion of HSN and DSN raised from 1/6 to 1/3
+
+**experiment 4c:** amount of exposure doubled + frequency of DSN increased
+---
+#4. Experiment IV
+##**Results**
+
+---
+#4. Experiment V
+##**Methods**
+### Participants
+### Stimuli
+---
+#4. Experiment V
+##**Results**
 ---
 #4. Results
 ##4.1 a
@@ -52,16 +399,24 @@ class: center, middle, inverse, title-slide
 ---
 #6. Evaluations
 ##6.2 Appropriateness/novelty of analysis
+###Given what you know/what you have previously read, was this the best analysis?
+###Did they do something you haven’t seen before? What? Why? How?
 ---
 #6. Evaluations
 ##6.3 Presentation of results
+###Did they properly/accurately explain their results?
+###Did they properly/accurately interpret their findings?
+###Did they use tables/graphs? Did the tables/graphs facilitate the interpretation of the results?
 ---
 #6. Evaluations
 ##6.4 Overall evalutations
+###Briefly describe why/what you liked or disliked about their analysis
+Additionally, I really do not like their ways of displaying tables!!!!
+They wanted to do too much stuff!
 ---
 class: center, middle
 
-# Thanks!
+# Thanks You!
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
