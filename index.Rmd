@@ -19,7 +19,6 @@ output:
 ###(Click [Here](https://github.com/ds4ling/online_presentation))
 
 --
-
 ## a small preface
 Since the focus of the assignment is put more on evaluating the statistical analysis part, it is not really necessary (for the audience) to know what each group in a specific experiment stands for. We need to care only about that certain groups (tags) are under **COMPARISON**.
 
@@ -122,7 +121,6 @@ mainly the idea is that the participant trained on combination listed on the las
 - O vs. C: sig. different on mean
 - T vs. C: sig. different on mean
 ]
-
 .pull-right[
 <img src="images/exp1.png" height="250px" style="border: 3px solid black; border-radius: 10px;">
 <div style="
